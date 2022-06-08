@@ -1,0 +1,57 @@
+Mac version: 
+sudo pip3 install scrapy
+
+scrapy version
+scrapy 2.5.0
+
+cd /Users/xuhuili/Desktop/ccm_project/web_scraping/tanjiaoyi
+
+beijing_spider
+
+scrapy startproject beijing_spider
+
+cd beijing_spider
+
+scrapy genspider beijing www.bjets.com.cn/article/jyxx/
+
+http://k.tanjiaoyi.com/#k
+
+scrapy shell www.bjets.com.cn/article/jyxx/
+fetch("http://www.bjets.com.cn/article/jyxx//")
+
+response
+
+Xpath notation:
+
+response.xpath('tr')
+
+response.xpath('//tr/td')
+
+response.xpath('//tr/td/text()')
+
+response.xpath('//tr/td/text()').extract()
+
+
+Selenium part:
+from selenium import webdriver
+driver = webdriver.Chrome('/Users/xuhuili/Desktop/ccm_project/chromedriver')
+
+# encounting this error:
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    self.service.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 104, in start
+    raise WebDriverException("Can not connect to the Service %s" % self.path)
+selenium.common.exceptions.WebDriverException: Message: Can not connect to the Service /Users/xuhuili/Desktop/ccm_project/chromedriver
+# Try:
+# xattr -d com.apple.quarantine /Users/xuhuili/Desktop/ccm_project/chromedriver
+
+driver.get('http://ets.cnemission.com/carbon/portalIndex/markethistory?Top=1')
+from scrapy.selector import Selector
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+daochu = driver.find_element_by_xpath('//*[@id="mytable1"]/tbody/tr/td/a[2]/span/span')
+daochu.click()
+chaxun = driver.find_element_by_xpath('//*[@id="mytable1"]/tbody/tr/td/a[1]/span/span')
+chaxun.click()

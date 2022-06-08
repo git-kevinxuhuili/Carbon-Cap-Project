@@ -1,0 +1,6 @@
+,Return,MSCI World Index TR Return,Barclays Global Aggregate Bond Index TR Return,Bloomberg Commodity Index TR Return,S&P 500 Total Return Index Return
+Return,1.0,-0.045,0.006,-0.004,-0.041
+MSCI World Index TR Return,-0.045,1.0,0.001,0.498,0.97
+Barclays Global Aggregate Bond Index TR Return,0.006,0.001,1.0,0.077,-0.078
+Bloomberg Commodity Index TR Return,-0.004,0.498,0.077,1.0,0.439
+S&P 500 Total Return Index Return,-0.041,0.97,-0.078,0.439,1.0
